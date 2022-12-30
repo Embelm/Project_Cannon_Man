@@ -4,6 +4,7 @@
 #include "CannonManCharacter.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
+
 // Sets default values
 ACannonManCharacter::ACannonManCharacter()
 {
@@ -24,6 +25,7 @@ ACannonManCharacter::ACannonManCharacter()
 void ACannonManCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+	//CharacterMovementComponent = Cast<UCharacterMovementComponent>(GetDefaultSubobjectByName("CharMoveComp")); an example to get a component from Blueprints
 	
 }
 
@@ -39,15 +41,20 @@ void ACannonManCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInput
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	// Mouse & Keyboard
+	//Axis
+		// Mouse & Keyboard
 	PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &ACannonManCharacter::MoveForward);
 	PlayerInputComponent->BindAxis(TEXT("MoveRight"), this, &ACannonManCharacter::MoveRight);
 	PlayerInputComponent->BindAxis(TEXT("LookUp"), this, &APawn::AddControllerPitchInput);
 	PlayerInputComponent->BindAxis(TEXT("LookRight"), this, &APawn::AddControllerYawInput);
 
-	// Controller
+		// Controller
 	PlayerInputComponent->BindAxis(TEXT("LookUpRate"), this, &ACannonManCharacter::LookUpRate);
 	PlayerInputComponent->BindAxis(TEXT("LookRightRate"), this, &ACannonManCharacter::LookRightRate);
+
+	// Action
+	PlayerInputComponent->BindAction(TEXT("Jump"), EInputEvent::IE_Pressed, this, &ACannonManCharacter::JumpAction);
+	PlayerInputComponent->BindAction(TEXT("Dash"), EInputEvent::IE_Pressed, this, &ACannonManCharacter::DashAction);
 
 
 }
@@ -71,5 +78,18 @@ void ACannonManCharacter::LookRightRate(float ScaleValue)
 {
 	AddControllerYawInput(ScaleValue * GetWorld()->GetDeltaSeconds() *  RotationRate);
 
+}
+
+void ACannonManCharacter::JumpAction()
+{
+	Jump();
+}
+
+void ACannonManCharacter::DashAction()
+{
+	FVector Velocity  = GetVelocity();
+	Velocity.Z = 0;
+	LaunchCharacter(Velocity.GetSafeNormal() * DashAmount, true, true);
+	UE_LOG(LogTemp, Warning, TEXT("Dash"));
 }
 

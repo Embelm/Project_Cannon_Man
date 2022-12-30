@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "CannonMan",
-			"Path": "C:\\Users\\Jonathan.EMBELM\\Documents\\Unreal Projects\\CannonMan\\Source\\CannonMan.Target.cs",
+			"Path": "C:\\Users\\Jonathan.EMBELM\\Documents\\Unreal Projects\\ProjectCannonMan\\CannonMan\\Source\\CannonMan.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "CannonManEditor",
-			"Path": "C:\\Users\\Jonathan.EMBELM\\Documents\\Unreal Projects\\CannonMan\\Source\\CannonManEditor.Target.cs",
+			"Path": "C:\\Users\\Jonathan.EMBELM\\Documents\\Unreal Projects\\ProjectCannonMan\\CannonMan\\Source\\CannonManEditor.Target.cs",
 			"Type": "Editor"
 		}
 	]

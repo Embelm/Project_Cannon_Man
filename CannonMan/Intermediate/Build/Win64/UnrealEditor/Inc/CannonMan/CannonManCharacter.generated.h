@@ -14,8 +14,26 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define CANNONMAN_CannonManCharacter_generated_h
 
 #define FID_CannonMan_Source_CannonMan_CannonManCharacter_h_12_SPARSE_DATA
-#define FID_CannonMan_Source_CannonMan_CannonManCharacter_h_12_RPC_WRAPPERS
-#define FID_CannonMan_Source_CannonMan_CannonManCharacter_h_12_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_CannonMan_Source_CannonMan_CannonManCharacter_h_12_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execDashAction); \
+	DECLARE_FUNCTION(execJumpAction); \
+	DECLARE_FUNCTION(execLookRightRate); \
+	DECLARE_FUNCTION(execLookUpRate); \
+	DECLARE_FUNCTION(execMoveRight); \
+	DECLARE_FUNCTION(execMoveForward);
+
+
+#define FID_CannonMan_Source_CannonMan_CannonManCharacter_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execDashAction); \
+	DECLARE_FUNCTION(execJumpAction); \
+	DECLARE_FUNCTION(execLookRightRate); \
+	DECLARE_FUNCTION(execLookUpRate); \
+	DECLARE_FUNCTION(execMoveRight); \
+	DECLARE_FUNCTION(execMoveForward);
+
+
 #define FID_CannonMan_Source_CannonMan_CannonManCharacter_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesACannonManCharacter(); \

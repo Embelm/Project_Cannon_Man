@@ -1,12 +1,12 @@
 {
     "Version": "1.1",
     "Data": {
-        "Source": "c:\\users\\jonathan.embelm\\documents\\unreal projects\\cannonman\\source\\cannonman\\cannonman.cpp",
+        "Source": "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\source\\cannonman\\cannonman.cpp",
         "ProvidedModule": "",
-        "PCH": "c:\\users\\jonathan.embelm\\documents\\unreal projects\\cannonman\\intermediate\\build\\win64\\cannonmaneditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "PCH": "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\intermediate\\build\\win64\\cannonmaneditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
         "Includes": [
-            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\cannonman\\intermediate\\build\\win64\\unrealeditor\\development\\cannonman\\definitions.cannonman.h",
-            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\cannonman\\source\\cannonman\\cannonman.h"
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\intermediate\\build\\win64\\unrealeditor\\development\\cannonman\\definitions.cannonman.h",
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\source\\cannonman\\cannonman.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

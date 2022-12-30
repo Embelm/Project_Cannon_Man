@@ -17,13 +17,13 @@ void EmptyLinkFunctionForGeneratedCodeCannonMan_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x45C21FF3,
-				0x68D4756B,
+				0x9EF7AF44,
+				0x81D513E5,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_CannonMan.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_CannonMan.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_CannonMan(Z_Construct_UPackage__Script_CannonMan, TEXT("/Script/CannonMan"), Z_Registration_Info_UPackage__Script_CannonMan, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x45C21FF3, 0x68D4756B));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_CannonMan(Z_Construct_UPackage__Script_CannonMan, TEXT("/Script/CannonMan"), Z_Registration_Info_UPackage__Script_CannonMan, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x9EF7AF44, 0x81D513E5));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
