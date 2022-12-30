@@ -1,0 +1,19 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\jonathan.embelm\\documents\\unreal projects\\cannonman\\source\\cannonman\\cannonmangamemodebase.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\jonathan.embelm\\documents\\unreal projects\\cannonman\\intermediate\\build\\win64\\cannonmaneditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\cannonman\\intermediate\\build\\win64\\unrealeditor\\development\\cannonman\\definitions.cannonman.h",
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\cannonman\\source\\cannonman\\cannonmangamemodebase.h",
+            "f:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
+            "f:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
+            "f:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\serverstatreplicator.generated.h",
+            "f:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\gamemodebase.generated.h",
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\cannonman\\intermediate\\build\\win64\\unrealeditor\\inc\\cannonman\\cannonmangamemodebase.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
