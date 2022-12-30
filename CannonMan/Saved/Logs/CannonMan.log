@@ -701,3 +701,15 @@ LogConfig: CVar [[QualityLevelMapping:high]] deferred - dummy variable created
 [2022.12.30-08.49.48:071][  0]LogAssetRegistry: Asset discovery search completed in 8.7409 seconds
 [2022.12.30-08.49.48:081][  0]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000002 seconds (updated 0 objects)
 [2022.12.30-08.49.48:102][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2022.12.30-08.50.26:131][115]LogLiveCoding: Display: Starting Live Coding compile.
+[2022.12.30-08.50.27:136][118]Display: Reload/Re-instancing Complete: No object changes detected
+[2022.12.30-08.50.27:136][118]LogLiveCoding: Display: Live coding succeeded, no code changes detected
+[2022.12.30-08.50.39:472][155]LogLiveCoding: Display: Starting Live Coding compile.
+[2022.12.30-08.50.46:821][177]LogLiveCoding: Display:    Creating library C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Binaries\Win64\UnrealEditor-CannonMan.patch_0.lib and object C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Binaries\Win64\UnrealEditor-CannonMan.patch_0.exp
+[2022.12.30-08.50.46:870][177]LogClass: CannonManCharacter Reload.
+[2022.12.30-08.50.46:870][177]LogClass: Could not find existing class CannonManCharacter in package /Script/CannonMan for reload, assuming new or modified class
+[2022.12.30-08.50.46:874][177]Re-instancing CannonManCharacter after reload.
+[2022.12.30-08.50.46:905][177]LogUObjectHash: Compacting FUObjectHashTables data took   0.45ms
+[2022.12.30-08.50.47:161][178]Display: Reload/Re-instancing Complete: 1 class changed
+[2022.12.30-08.50.47:161][178]LogLiveCoding: Warning: Live coding succeeded, data type changes may cause packaging to fail if assets reference the new or updated data types
+[2022.12.30-08.51.39:534][497]LogDerivedDataCache: C:/Users/Jonathan.EMBELM/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:01.496 and deleted 0 file(s) with total size 0 MiB.

@@ -37,6 +37,7 @@ public:
 	float RotationRate = 100;
 
 	float TESTFLOAT;
+	float TESTFLOAT2;
 
 private:
 
