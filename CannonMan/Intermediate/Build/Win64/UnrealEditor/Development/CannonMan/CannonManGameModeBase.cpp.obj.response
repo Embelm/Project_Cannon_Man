@@ -1,4 +1,4 @@
-"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\CannonMan\Source\CannonMan\CannonManGameModeBase.cpp"
+"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Source\CannonMan\CannonManGameModeBase.cpp"
 /I .
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\Engine
 /I Runtime
@@ -251,8 +251,8 @@
 /I Runtime\ClothingSystemRuntimeInterface\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\AnimationDataController
 /I Developer\AnimationDataController\Public
-/I "C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\CannonMan\Intermediate\Build\Win64\UnrealEditor\Inc\CannonMan"
-/I "C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\CannonMan\Source"
+/I "C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\UnrealEditor\Inc\CannonMan"
+/I "C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Source"
 /I ThirdParty\mimalloc\include
 /I ThirdParty\LibTiff\Source\Win64
 /I ThirdParty\LibTiff\Source
@@ -273,12 +273,12 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
-/FI"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\CannonMan\Intermediate\Build\Win64\CannonManEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/FI"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\CannonMan\Intermediate\Build\Win64\UnrealEditor\Development\CannonMan\Definitions.CannonMan.h"
-/Yu"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\CannonMan\Intermediate\Build\Win64\CannonManEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\CannonMan\Intermediate\Build\Win64\CannonManEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-/Fo"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\CannonMan\Intermediate\Build\Win64\UnrealEditor\Development\CannonMan\CannonManGameModeBase.cpp.obj"
-/sourceDependencies "C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\CannonMan\Intermediate\Build\Win64\UnrealEditor\Development\CannonMan\CannonManGameModeBase.cpp.json"
+/FI"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\CannonManEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/FI"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\UnrealEditor\Development\CannonMan\Definitions.CannonMan.h"
+/Yu"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\CannonManEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\CannonManEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+/Fo"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\UnrealEditor\Development\CannonMan\CannonManGameModeBase.cpp.obj"
+/sourceDependencies "C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\UnrealEditor\Development\CannonMan\CannonManGameModeBase.cpp.json"
 /Zc:inline
 /nologo
 /Oi

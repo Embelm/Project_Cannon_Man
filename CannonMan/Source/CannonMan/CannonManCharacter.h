@@ -36,6 +36,8 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Locomotion")
 	float RotationRate = 100;
 
+	float TESTFLOAT;
+
 private:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components", meta = (AllowPrivateAccess = "true"))

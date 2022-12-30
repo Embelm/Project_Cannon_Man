@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"C:\\Users\\Jonathan.EMBELM\\Documents\\Unreal Projects\\CannonMan\\Source\\CannonMan\\CannonMan.Build.cs",
-		"C:\\Users\\Jonathan.EMBELM\\Documents\\Unreal Projects\\CannonMan\\Source\\CannonMan.Target.cs",
-		"C:\\Users\\Jonathan.EMBELM\\Documents\\Unreal Projects\\CannonMan\\Source\\CannonManEditor.Target.cs"
+		"C:\\Users\\Jonathan.EMBELM\\Documents\\Unreal Projects\\ProjectCannonMan\\CannonMan\\Source\\CannonMan\\CannonMan.Build.cs",
+		"C:\\Users\\Jonathan.EMBELM\\Documents\\Unreal Projects\\ProjectCannonMan\\CannonMan\\Source\\CannonMan.Target.cs",
+		"C:\\Users\\Jonathan.EMBELM\\Documents\\Unreal Projects\\ProjectCannonMan\\CannonMan\\Source\\CannonManEditor.Target.cs"
 	],
 	"EngineVersion": "5.0.3"
 }
