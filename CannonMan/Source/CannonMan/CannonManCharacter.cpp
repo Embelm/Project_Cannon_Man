@@ -28,6 +28,7 @@ void ACannonManCharacter::BeginPlay()
 	Super::BeginPlay();
 	//CharacterMovementComponent = Cast<UCharacterMovementComponent>(GetDefaultSubobjectByName("CharMoveComp")); an example to get a component from Blueprints
 	Weapon = GetWorld()->SpawnActor<ACannonBase>(WeaponClass);
+	Weapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("hand_r"));
 	
 }
 
