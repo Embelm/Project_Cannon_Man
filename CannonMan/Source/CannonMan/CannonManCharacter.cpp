@@ -4,6 +4,7 @@
 #include "CannonManCharacter.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
+#include "CannonBase.h"
 
 // Sets default values
 ACannonManCharacter::ACannonManCharacter()
@@ -26,6 +27,7 @@ void ACannonManCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	//CharacterMovementComponent = Cast<UCharacterMovementComponent>(GetDefaultSubobjectByName("CharMoveComp")); an example to get a component from Blueprints
+	Weapon = GetWorld()->SpawnActor<ACannonBase>(WeaponClass);
 	
 }
 
@@ -87,9 +89,12 @@ void ACannonManCharacter::JumpAction()
 
 void ACannonManCharacter::DashAction()
 {
-	FVector Velocity  = GetVelocity();
+	FVector Velocity  = GetVelocity().GetSafeNormal() * DashAmount;
 	Velocity.Z = 0;
-	LaunchCharacter(Velocity.GetSafeNormal() * DashAmount, true, true);
+	FVector NewPosition = (Velocity + GetActorLocation());
+	SetActorLocation(NewPosition); 
+	
+	//LaunchCharacter(Velocity.GetSafeNormal() * DashAmount, true, true);
 	UE_LOG(LogTemp, Warning, TEXT("Dash"));
 }
 

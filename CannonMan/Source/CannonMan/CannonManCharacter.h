@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "CannonManCharacter.generated.h"
 
+class ACannonBase;
 UCLASS()
 class CANNONMAN_API ACannonManCharacter : public ACharacter
 {
@@ -58,7 +59,10 @@ private:
 	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* CameraComponent;
 
-	//class UCharacterMovementComponent* CharacterMovementComponent;
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<ACannonBase> WeaponClass;
+	
+	ACannonBase* Weapon;
 
 	
 
