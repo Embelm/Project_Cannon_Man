@@ -29,3 +29,46 @@ void ACannonBase::Tick(float DeltaTime)
 
 }
 
+void ACannonBase::PullTrigger()
+{
+	FHitResult HitResult;
+	FVector ShotDirection;;
+
+	bool bSuccess = GunTrace(HitResult, ShotDirection);
+	if(bSuccess)
+	{
+		DrawDebugPoint(GetWorld(), HitResult.Location, 20, FColor::Red, false, 3.0f);
+
+		// Do Damage and particle
+	}
+}
+
+bool ACannonBase::GunTrace(FHitResult& HitResult, FVector& ShotDirection)
+{
+	AController* OwnerController = GetOwnerController();
+	if(OwnerController == nullptr)
+	{
+		return false;
+	}
+
+	FVector Location;
+	FRotator Rotation;
+	OwnerController->GetPlayerViewPoint(Location, Rotation);
+	ShotDirection = -Rotation.Vector();
+	FVector End = Location + Rotation.Vector() * MaxRange;
+	//DrawDebugCamera(GetWorld(), Location, Rotation, 90, 2, FColor::Red, true);
+	return GetWorld()->LineTraceSingleByChannel(HitResult, Location, End, ECollisionChannel::ECC_GameTraceChannel1);
+}
+
+AController* ACannonBase::GetOwnerController()
+{
+	APawn* OwnerPawn = Cast<APawn>(GetOwner());
+	if(OwnerPawn == nullptr)
+	{
+		return nullptr;
+	}
+	return OwnerPawn->GetController();
+}
+
+
+

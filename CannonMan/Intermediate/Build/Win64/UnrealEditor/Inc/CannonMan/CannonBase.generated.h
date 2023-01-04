@@ -8,14 +8,25 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+struct FHitResult;
 #ifdef CANNONMAN_CannonBase_generated_h
 #error "CannonBase.generated.h already included, missing '#pragma once' in CannonBase.h"
 #endif
 #define CANNONMAN_CannonBase_generated_h
 
 #define FID_CannonMan_Source_CannonMan_CannonBase_h_12_SPARSE_DATA
-#define FID_CannonMan_Source_CannonMan_CannonBase_h_12_RPC_WRAPPERS
-#define FID_CannonMan_Source_CannonMan_CannonBase_h_12_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_CannonMan_Source_CannonMan_CannonBase_h_12_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGunTrace); \
+	DECLARE_FUNCTION(execPullTrigger);
+
+
+#define FID_CannonMan_Source_CannonMan_CannonBase_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGunTrace); \
+	DECLARE_FUNCTION(execPullTrigger);
+
+
 #define FID_CannonMan_Source_CannonMan_CannonBase_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesACannonBase(); \

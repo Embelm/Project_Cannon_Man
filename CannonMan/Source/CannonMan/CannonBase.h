@@ -23,6 +23,9 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	UFUNCTION(BlueprintCallable)
+	void PullTrigger();
+
 private:
 	UPROPERTY(VisibleAnywhere)
 	USceneComponent* Root;
@@ -32,5 +35,14 @@ private:
 
 	UPROPERTY(EditAnywhere)
 	class UArrowComponent* ArrowComponent;
+
+	UPROPERTY(EditAnywhere)
+	float MaxRange = 1000.0f;
+
+	UFUNCTION(BlueprintCallable)
+	bool GunTrace(FHitResult& HitResult, FVector& ShotDirection);
+
+	AController* GetOwnerController();
+
 
 };

@@ -16,6 +16,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_CannonMan_Source_CannonMan_CannonManCharacter_h_13_SPARSE_DATA
 #define FID_CannonMan_Source_CannonMan_CannonManCharacter_h_13_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execDashRefresh); \
+	DECLARE_FUNCTION(execFire); \
 	DECLARE_FUNCTION(execDashAction); \
 	DECLARE_FUNCTION(execJumpAction); \
 	DECLARE_FUNCTION(execLookRightRate); \
@@ -26,6 +28,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define FID_CannonMan_Source_CannonMan_CannonManCharacter_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execDashRefresh); \
+	DECLARE_FUNCTION(execFire); \
 	DECLARE_FUNCTION(execDashAction); \
 	DECLARE_FUNCTION(execJumpAction); \
 	DECLARE_FUNCTION(execLookRightRate); \

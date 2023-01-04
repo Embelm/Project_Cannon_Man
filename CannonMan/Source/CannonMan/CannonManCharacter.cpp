@@ -5,6 +5,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "CannonBase.h"
+#include "Math/UnrealMathUtility.h"
 
 // Sets default values
 ACannonManCharacter::ACannonManCharacter()
@@ -29,6 +30,9 @@ void ACannonManCharacter::BeginPlay()
 	//CharacterMovementComponent = Cast<UCharacterMovementComponent>(GetDefaultSubobjectByName("CharMoveComp")); an example to get a component from Blueprints
 	Weapon = GetWorld()->SpawnActor<ACannonBase>(WeaponClass);
 	Weapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("hand_r"));
+	Weapon->SetOwner(this);
+
+	DashCounter = MaxDashCounter;
 	
 }
 
@@ -36,7 +40,14 @@ void ACannonManCharacter::BeginPlay()
 void ACannonManCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	if (IsDashing)
+	{
+		DashUpdate(DeltaTime);
+	}
+	if(DashCounter < MaxDashCounter)
+	{
+		DashRefresh(DeltaTime);
+	}
 }
 
 // Called to bind functionality to input
@@ -58,8 +69,7 @@ void ACannonManCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInput
 	// Action
 	PlayerInputComponent->BindAction(TEXT("Jump"), EInputEvent::IE_Pressed, this, &ACannonManCharacter::JumpAction);
 	PlayerInputComponent->BindAction(TEXT("Dash"), EInputEvent::IE_Pressed, this, &ACannonManCharacter::DashAction);
-
-
+	PlayerInputComponent->BindAction(TEXT("Fire"), EInputEvent::IE_Pressed, this, &ACannonManCharacter::Fire);
 }
 
 void ACannonManCharacter::MoveForward(float ScaleValue)
@@ -88,14 +98,67 @@ void ACannonManCharacter::JumpAction()
 	Jump();
 }
 
-void ACannonManCharacter::DashAction()
+void ACannonManCharacter::Fire()
 {
-	FVector Velocity  = GetVelocity().GetSafeNormal() * DashAmount;
-	Velocity.Z = 0;
-	FVector NewPosition = (Velocity + GetActorLocation());
-	SetActorLocation(NewPosition); 
-	
-	//LaunchCharacter(Velocity.GetSafeNormal() * DashAmount, true, true);
-	UE_LOG(LogTemp, Warning, TEXT("Dash"));
+	Weapon->PullTrigger();
 }
 
+void ACannonManCharacter::DashRefresh(float DeltaTime)
+{
+	DashRefreshTimer += DeltaTime;
+	if(DashRefreshTimer >= DashCounterRefreshSpeed)
+	{
+		DashCounter++;
+		DashRefreshTimer = 0;
+	}
+}
+
+void ACannonManCharacter::DashAction()
+{
+
+	// Calculate the direction of the dash through the velocity
+	// Set the Zaxis to 0 so that we aren't dashing up or down. 
+	// If the player's velocity is 0 use the Forward direction
+	// Calculate the length of the dash. 
+	// MOVE the player's position to the calculated position determined by how fast it will dash
+	// This is so that the camera can still be in play and not teleport which will disorient the player. 
+
+	// Maybe we can lerp the position instead of using the launchcharacter function. 
+	if(!IsDashing && DashCounter > 0)
+	{
+		FVector Velocity = GetVelocity().GetSafeNormal() * DashLength;
+		Velocity.Z = 0;
+	
+		if (Velocity == FVector::ZeroVector)
+		{
+			Velocity = GetActorForwardVector() * DashLength;
+		}
+
+		DashPosition = (Velocity + GetActorLocation());
+		DebugDashSphere(DashPosition);
+		OriginalPosition = GetActorLocation();
+		IsDashing = true;
+		DashCounter--;
+		UE_LOG(LogTemp, Warning, TEXT("DashCounter= %i"), DashCounter);
+	}
+
+}
+
+void ACannonManCharacter::DashUpdate(float DeltaTime)
+{
+	DashAlpha += DeltaTime * DashSpeed;
+	FVector Test = FMath::Lerp(OriginalPosition, DashPosition, DashAlpha);
+	SetActorLocation(Test);
+	if (DashAlpha >= 1)
+	{
+		DashAlpha = 0;
+		IsDashing = false;
+	}
+}
+
+void ACannonManCharacter::DebugDashSphere(FVector NewPosition)
+{
+	FCollisionShape Sphere = FCollisionShape::MakeSphere(50.0f);
+	FHitResult Hit;
+	DrawDebugSphere(GetWorld(), NewPosition, 50.0f, 12.0f, FColor::Red, false, 5.0f);
+}

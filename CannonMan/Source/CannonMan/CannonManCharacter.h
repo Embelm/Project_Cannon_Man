@@ -27,6 +27,22 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UPROPERTY(EditAnywhere, Category = "Locomotion")
+	float RotationRate = 100;
+
+	UPROPERTY(EditAnywhere, Category = "Locomotion")
+	float DashLength = 500.0f;
+	
+	UPROPERTY(EditAnywhere, Category = "Locomotion")
+	float DashSpeed = 10.0f;
+
+	void DebugDashSphere(FVector NewPosition);
+
+	UPROPERTY(EditAnywhere, Category = "Locomotion")
+	int32 DashCounter;
+
+private:
+
 	UFUNCTION(BlueprintCallable)
 	void MoveForward(float ScaleValue);
 
@@ -45,13 +61,13 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void DashAction();
 
-	UPROPERTY(EditAnywhere, Category = "Locomotion")
-	float RotationRate = 100;
+	UFUNCTION(BlueprintCallable)
+	void Fire();
 
-	UPROPERTY(EditAnywhere, Category = "Locomotion")
-	float DashAmount = 1000;
+	UFUNCTION(BlueprintCallable)
+	void DashRefresh(float DeltaTime);
 
-private:
+	void DashUpdate(float DeltaTime);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* SpringArmComponent;
@@ -61,9 +77,22 @@ private:
 
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<ACannonBase> WeaponClass;
-	
-	ACannonBase* Weapon;
 
-	
+	UPROPERTY(EditAnywhere)
+	bool IsDashing = false;
+
+	UPROPERTY(EditAnywhere, Category = "Locomotion")
+	int32 MaxDashCounter = 2;
+
+	UPROPERTY(EditAnywhere, Category = "Locomotion")
+	float DashCounterRefreshSpeed = 1;
+
+	float DashAlpha = 0;
+	float DashRefreshTimer = 0;
+
+	FVector DashPosition;
+	FVector OriginalPosition;
+
+	ACannonBase* Weapon;
 
 };
