@@ -15,17 +15,10 @@ void EmptyLinkFunctionForGeneratedCodeCannonManCharacter() {}
 	UPackage* Z_Construct_UPackage__Script_CannonMan();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
+	CANNONMAN_API UClass* Z_Construct_UClass_UDashComponent_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	CANNONMAN_API UClass* Z_Construct_UClass_ACannonBase_NoRegister();
 // End Cross Module References
-	DEFINE_FUNCTION(ACannonManCharacter::execDashRefresh)
-	{
-		P_GET_PROPERTY(FFloatProperty,Z_Param_DeltaTime);
-		P_FINISH;
-		P_NATIVE_BEGIN;
-		P_THIS->DashRefresh(Z_Param_DeltaTime);
-		P_NATIVE_END;
-	}
 	DEFINE_FUNCTION(ACannonManCharacter::execFire)
 	{
 		P_FINISH;
@@ -33,11 +26,11 @@ void EmptyLinkFunctionForGeneratedCodeCannonManCharacter() {}
 		P_THIS->Fire();
 		P_NATIVE_END;
 	}
-	DEFINE_FUNCTION(ACannonManCharacter::execDashAction)
+	DEFINE_FUNCTION(ACannonManCharacter::execDash)
 	{
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->DashAction();
+		P_THIS->Dash();
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(ACannonManCharacter::execJumpAction)
@@ -83,8 +76,7 @@ void EmptyLinkFunctionForGeneratedCodeCannonManCharacter() {}
 	{
 		UClass* Class = ACannonManCharacter::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
-			{ "DashAction", &ACannonManCharacter::execDashAction },
-			{ "DashRefresh", &ACannonManCharacter::execDashRefresh },
+			{ "Dash", &ACannonManCharacter::execDash },
 			{ "Fire", &ACannonManCharacter::execFire },
 			{ "JumpAction", &ACannonManCharacter::execJumpAction },
 			{ "LookRightRate", &ACannonManCharacter::execLookRightRate },
@@ -94,7 +86,7 @@ void EmptyLinkFunctionForGeneratedCodeCannonManCharacter() {}
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
-	struct Z_Construct_UFunction_ACannonManCharacter_DashAction_Statics
+	struct Z_Construct_UFunction_ACannonManCharacter_Dash_Statics
 	{
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -102,49 +94,17 @@ void EmptyLinkFunctionForGeneratedCodeCannonManCharacter() {}
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACannonManCharacter_DashAction_Statics::Function_MetaDataParams[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACannonManCharacter_Dash_Statics::Function_MetaDataParams[] = {
 		{ "ModuleRelativePath", "CannonManCharacter.h" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ACannonManCharacter_DashAction_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACannonManCharacter, nullptr, "DashAction", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04040401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACannonManCharacter_DashAction_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACannonManCharacter_DashAction_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_ACannonManCharacter_DashAction()
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ACannonManCharacter_Dash_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACannonManCharacter, nullptr, "Dash", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04040401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACannonManCharacter_Dash_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACannonManCharacter_Dash_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ACannonManCharacter_Dash()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ACannonManCharacter_DashAction_Statics::FuncParams);
-		}
-		return ReturnFunction;
-	}
-	struct Z_Construct_UFunction_ACannonManCharacter_DashRefresh_Statics
-	{
-		struct CannonManCharacter_eventDashRefresh_Parms
-		{
-			float DeltaTime;
-		};
-		static const UECodeGen_Private::FFloatPropertyParams NewProp_DeltaTime;
-		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FFunctionParams FuncParams;
-	};
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_ACannonManCharacter_DashRefresh_Statics::NewProp_DeltaTime = { "DeltaTime", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(CannonManCharacter_eventDashRefresh_Parms, DeltaTime), METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ACannonManCharacter_DashRefresh_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ACannonManCharacter_DashRefresh_Statics::NewProp_DeltaTime,
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACannonManCharacter_DashRefresh_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "CannonManCharacter.h" },
-	};
-#endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ACannonManCharacter_DashRefresh_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACannonManCharacter, nullptr, "DashRefresh", nullptr, nullptr, sizeof(Z_Construct_UFunction_ACannonManCharacter_DashRefresh_Statics::CannonManCharacter_eventDashRefresh_Parms), Z_Construct_UFunction_ACannonManCharacter_DashRefresh_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ACannonManCharacter_DashRefresh_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04040401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACannonManCharacter_DashRefresh_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACannonManCharacter_DashRefresh_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_ACannonManCharacter_DashRefresh()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ACannonManCharacter_DashRefresh_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ACannonManCharacter_Dash_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -337,18 +297,6 @@ void EmptyLinkFunctionForGeneratedCodeCannonManCharacter() {}
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_RotationRate;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_DashLength_MetaData[];
-#endif
-		static const UECodeGen_Private::FFloatPropertyParams NewProp_DashLength;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_DashSpeed_MetaData[];
-#endif
-		static const UECodeGen_Private::FFloatPropertyParams NewProp_DashSpeed;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_DashCounter_MetaData[];
-#endif
-		static const UECodeGen_Private::FIntPropertyParams NewProp_DashCounter;
-#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_SpringArmComponent_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_SpringArmComponent;
@@ -357,22 +305,13 @@ void EmptyLinkFunctionForGeneratedCodeCannonManCharacter() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_CameraComponent;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DashComponent_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_DashComponent;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_WeaponClass_MetaData[];
 #endif
 		static const UECodeGen_Private::FClassPropertyParams NewProp_WeaponClass;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_IsDashing_MetaData[];
-#endif
-		static void NewProp_IsDashing_SetBit(void* Obj);
-		static const UECodeGen_Private::FBoolPropertyParams NewProp_IsDashing;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_MaxDashCounter_MetaData[];
-#endif
-		static const UECodeGen_Private::FIntPropertyParams NewProp_MaxDashCounter;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_DashCounterRefreshSpeed_MetaData[];
-#endif
-		static const UECodeGen_Private::FFloatPropertyParams NewProp_DashCounterRefreshSpeed;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -382,8 +321,7 @@ void EmptyLinkFunctionForGeneratedCodeCannonManCharacter() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_CannonMan,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ACannonManCharacter_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_ACannonManCharacter_DashAction, "DashAction" }, // 2286096076
-		{ &Z_Construct_UFunction_ACannonManCharacter_DashRefresh, "DashRefresh" }, // 3453580569
+		{ &Z_Construct_UFunction_ACannonManCharacter_Dash, "Dash" }, // 2334671805
 		{ &Z_Construct_UFunction_ACannonManCharacter_Fire, "Fire" }, // 2587889395
 		{ &Z_Construct_UFunction_ACannonManCharacter_JumpAction, "JumpAction" }, // 1900308511
 		{ &Z_Construct_UFunction_ACannonManCharacter_LookRightRate, "LookRightRate" }, // 3264203226
@@ -406,27 +344,6 @@ void EmptyLinkFunctionForGeneratedCodeCannonManCharacter() {}
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_RotationRate = { "RotationRate", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACannonManCharacter, RotationRate), METADATA_PARAMS(Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_RotationRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_RotationRate_MetaData)) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashLength_MetaData[] = {
-		{ "Category", "Locomotion" },
-		{ "ModuleRelativePath", "CannonManCharacter.h" },
-	};
-#endif
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashLength = { "DashLength", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACannonManCharacter, DashLength), METADATA_PARAMS(Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashLength_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashLength_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashSpeed_MetaData[] = {
-		{ "Category", "Locomotion" },
-		{ "ModuleRelativePath", "CannonManCharacter.h" },
-	};
-#endif
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashSpeed = { "DashSpeed", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACannonManCharacter, DashSpeed), METADATA_PARAMS(Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashSpeed_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashCounter_MetaData[] = {
-		{ "Category", "Locomotion" },
-		{ "ModuleRelativePath", "CannonManCharacter.h" },
-	};
-#endif
-	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashCounter = { "DashCounter", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACannonManCharacter, DashCounter), METADATA_PARAMS(Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashCounter_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashCounter_MetaData)) };
-#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_SpringArmComponent_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Components" },
@@ -445,48 +362,26 @@ void EmptyLinkFunctionForGeneratedCodeCannonManCharacter() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_CameraComponent = { "CameraComponent", nullptr, (EPropertyFlags)0x004000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACannonManCharacter, CameraComponent), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_CameraComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_CameraComponent_MetaData)) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashComponent_MetaData[] = {
+		{ "Category", "CannonManCharacter" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "CannonManCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashComponent = { "DashComponent", nullptr, (EPropertyFlags)0x0040000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACannonManCharacter, DashComponent), Z_Construct_UClass_UDashComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashComponent_MetaData)) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_WeaponClass_MetaData[] = {
 		{ "Category", "CannonManCharacter" },
 		{ "ModuleRelativePath", "CannonManCharacter.h" },
 	};
 #endif
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_WeaponClass = { "WeaponClass", nullptr, (EPropertyFlags)0x0044000000010001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACannonManCharacter, WeaponClass), Z_Construct_UClass_ACannonBase_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_WeaponClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_WeaponClass_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_IsDashing_MetaData[] = {
-		{ "Category", "CannonManCharacter" },
-		{ "ModuleRelativePath", "CannonManCharacter.h" },
-	};
-#endif
-	void Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_IsDashing_SetBit(void* Obj)
-	{
-		((ACannonManCharacter*)Obj)->IsDashing = 1;
-	}
-	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_IsDashing = { "IsDashing", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(ACannonManCharacter), &Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_IsDashing_SetBit, METADATA_PARAMS(Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_IsDashing_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_IsDashing_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_MaxDashCounter_MetaData[] = {
-		{ "Category", "Locomotion" },
-		{ "ModuleRelativePath", "CannonManCharacter.h" },
-	};
-#endif
-	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_MaxDashCounter = { "MaxDashCounter", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACannonManCharacter, MaxDashCounter), METADATA_PARAMS(Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_MaxDashCounter_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_MaxDashCounter_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashCounterRefreshSpeed_MetaData[] = {
-		{ "Category", "Locomotion" },
-		{ "ModuleRelativePath", "CannonManCharacter.h" },
-	};
-#endif
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashCounterRefreshSpeed = { "DashCounterRefreshSpeed", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACannonManCharacter, DashCounterRefreshSpeed), METADATA_PARAMS(Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashCounterRefreshSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashCounterRefreshSpeed_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACannonManCharacter_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_RotationRate,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashLength,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashSpeed,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashCounter,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_SpringArmComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_CameraComponent,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_WeaponClass,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_IsDashing,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_MaxDashCounter,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannonManCharacter_Statics::NewProp_DashCounterRefreshSpeed,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ACannonManCharacter_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ACannonManCharacter>::IsAbstract,
@@ -524,9 +419,9 @@ void EmptyLinkFunctionForGeneratedCodeCannonManCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_CannonMan_Source_CannonMan_CannonManCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ACannonManCharacter, ACannonManCharacter::StaticClass, TEXT("ACannonManCharacter"), &Z_Registration_Info_UClass_ACannonManCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACannonManCharacter), 3110343882U) },
+		{ Z_Construct_UClass_ACannonManCharacter, ACannonManCharacter::StaticClass, TEXT("ACannonManCharacter"), &Z_Registration_Info_UClass_ACannonManCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACannonManCharacter), 2561820506U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_CannonMan_Source_CannonMan_CannonManCharacter_h_3931987290(TEXT("/Script/CannonMan"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_CannonMan_Source_CannonMan_CannonManCharacter_h_1268890869(TEXT("/Script/CannonMan"),
 		Z_CompiledInDeferFile_FID_CannonMan_Source_CannonMan_CannonManCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_CannonMan_Source_CannonMan_CannonManCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
