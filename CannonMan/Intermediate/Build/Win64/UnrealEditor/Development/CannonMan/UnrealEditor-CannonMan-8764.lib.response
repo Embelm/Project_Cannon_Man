@@ -1,0 +1,23 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-CannonMan-8764.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\CannonManEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\UnrealEditor\Development\CannonMan\CannonBase.cpp.obj"
+"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\UnrealEditor\Development\CannonMan\CannonMan.cpp.obj"
+"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\UnrealEditor\Development\CannonMan\CannonManGameModeBase.cpp.obj"
+"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\UnrealEditor\Development\CannonMan\CannonManPlayerController.cpp.obj"
+"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\UnrealEditor\Development\CannonMan\CannonManCharacter.cpp.obj"
+"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\UnrealEditor\Development\CannonMan\DashComponent.cpp.obj"
+"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\UnrealEditor\Development\CannonMan\CannonBase.gen.cpp.obj"
+"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\UnrealEditor\Development\CannonMan\CannonMan.init.gen.cpp.obj"
+"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\UnrealEditor\Development\CannonMan\CannonManCharacter.gen.cpp.obj"
+"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\UnrealEditor\Development\CannonMan\CannonManGameModeBase.gen.cpp.obj"
+"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\UnrealEditor\Development\CannonMan\CannonManPlayerController.gen.cpp.obj"
+"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\UnrealEditor\Development\CannonMan\DashComponent.gen.cpp.obj"
+"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\UnrealEditor\Development\CannonMan\Default.rc2.res"
+/OUT:"C:\Users\Jonathan.EMBELM\Documents\Unreal Projects\ProjectCannonMan\CannonMan\Intermediate\Build\Win64\UnrealEditor\Development\CannonMan\UnrealEditor-CannonMan-8764.lib"

@@ -7,6 +7,7 @@
 #include "CannonBase.h"
 #include "Math/UnrealMathUtility.h"
 #include "DashComponent.h"
+#include "HealthComponent.h"
 
 // Sets default values
 ACannonManCharacter::ACannonManCharacter()
@@ -16,13 +17,14 @@ ACannonManCharacter::ACannonManCharacter()
 
 	SpringArmComponent = CreateDefaultSubobject<USpringArmComponent>(TEXT("Spring Arm"));
 
-	SpringArmComponent->SetupAttachment(RootComponent);
+	SpringArmComponent->SetupAttachment(GetMesh());
 
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 
 	CameraComponent->SetupAttachment(SpringArmComponent);
 
 	DashComponent = CreateDefaultSubobject<UDashComponent>(TEXT("Dash"));
+	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("Health"));
 
 }
 
@@ -34,7 +36,6 @@ void ACannonManCharacter::BeginPlay()
 	Weapon = GetWorld()->SpawnActor<ACannonBase>(WeaponClass);
 	Weapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("hand_r"));
 	Weapon->SetOwner(this);
-
 	
 }
 
@@ -64,6 +65,7 @@ void ACannonManCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInput
 	PlayerInputComponent->BindAction(TEXT("Jump"), EInputEvent::IE_Pressed, this, &ACannonManCharacter::JumpAction);
 	PlayerInputComponent->BindAction(TEXT("Dash"), EInputEvent::IE_Pressed, this, &ACannonManCharacter::Dash);
 	PlayerInputComponent->BindAction(TEXT("Fire"), EInputEvent::IE_Pressed, this, &ACannonManCharacter::Fire);
+	PlayerInputComponent->BindAction(TEXT("Crouch"), EInputEvent::IE_Pressed, this, &ACannonManCharacter::CrouchToggle);
 }
 
 void ACannonManCharacter::MoveForward(float ScaleValue)
@@ -97,8 +99,25 @@ void ACannonManCharacter::Fire()
 	Weapon->PullTrigger();
 }
 
+void ACannonManCharacter::CrouchToggle()
+{
+	//FVector CameraLocationA = SpringArmComponent->GetRelativeLocation(); 
+	
+	if(!bIsCrouched)
+	{
+		Crouch();
+
+	}
+	else
+	{
+		UnCrouch();
+	}
+}
+
 void ACannonManCharacter::Dash()
 {
-	DashComponent->DashAction();
-
+	if(!bIsCrouched)
+	{
+		DashComponent->DashAction();
+	}
 }

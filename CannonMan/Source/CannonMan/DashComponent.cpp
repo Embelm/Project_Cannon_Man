@@ -32,6 +32,7 @@ void UDashComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorC
 	if(DebugDash)
 	{
 		DashAction();
+		DebugDash = false;
 	}
 	if (IsDashing)
 	{
@@ -44,6 +45,8 @@ void UDashComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorC
 	
 }
 
+
+//TODO: Rename and optimize this function
 void UDashComponent::DashAction()	// Getting the location to dash to
 {
 	if(Owner != nullptr && !IsDashing && DashCounter > 0)

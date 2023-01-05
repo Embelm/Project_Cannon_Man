@@ -139,6 +139,10 @@ void EmptyLinkFunctionForGeneratedCodeCannonBase() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_MaxRange_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_MaxRange;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Damage_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_Damage;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -188,11 +192,19 @@ void EmptyLinkFunctionForGeneratedCodeCannonBase() {}
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACannonBase_Statics::NewProp_MaxRange = { "MaxRange", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACannonBase, MaxRange), METADATA_PARAMS(Z_Construct_UClass_ACannonBase_Statics::NewProp_MaxRange_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACannonBase_Statics::NewProp_MaxRange_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACannonBase_Statics::NewProp_Damage_MetaData[] = {
+		{ "Category", "CannonBase" },
+		{ "ModuleRelativePath", "CannonBase.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACannonBase_Statics::NewProp_Damage = { "Damage", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACannonBase, Damage), METADATA_PARAMS(Z_Construct_UClass_ACannonBase_Statics::NewProp_Damage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACannonBase_Statics::NewProp_Damage_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACannonBase_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannonBase_Statics::NewProp_Root,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannonBase_Statics::NewProp_MeshComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannonBase_Statics::NewProp_ArrowComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannonBase_Statics::NewProp_MaxRange,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannonBase_Statics::NewProp_Damage,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ACannonBase_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ACannonBase>::IsAbstract,
@@ -230,9 +242,9 @@ void EmptyLinkFunctionForGeneratedCodeCannonBase() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_CannonMan_Source_CannonMan_CannonBase_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ACannonBase, ACannonBase::StaticClass, TEXT("ACannonBase"), &Z_Registration_Info_UClass_ACannonBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACannonBase), 4180727654U) },
+		{ Z_Construct_UClass_ACannonBase, ACannonBase::StaticClass, TEXT("ACannonBase"), &Z_Registration_Info_UClass_ACannonBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACannonBase), 2626401152U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_CannonMan_Source_CannonMan_CannonBase_h_3077044872(TEXT("/Script/CannonMan"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_CannonMan_Source_CannonMan_CannonBase_h_4099365111(TEXT("/Script/CannonMan"),
 		Z_CompiledInDeferFile_FID_CannonMan_Source_CannonMan_CannonBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_CannonMan_Source_CannonMan_CannonBase_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

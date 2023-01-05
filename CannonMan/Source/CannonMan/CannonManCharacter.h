@@ -54,6 +54,10 @@ private:
 	UFUNCTION(BlueprintCallable)
 	void Fire();
 
+	UFUNCTION(BlueprintCallable)
+	void CrouchToggle();
+
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* SpringArmComponent;
 
@@ -62,6 +66,9 @@ private:
 
 	UPROPERTY(EditAnywhere)
 	class UDashComponent* DashComponent;
+
+	UPROPERTY(EditAnywhere)
+	class UHealthComponent* HealthComponent;
 
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<ACannonBase> WeaponClass;

@@ -19,7 +19,11 @@
             "f:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\camera\\cameracomponent.h",
             "f:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\cameracomponent.generated.h",
             "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\source\\cannonman\\cannonbase.h",
-            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\intermediate\\build\\win64\\unrealeditor\\inc\\cannonman\\cannonbase.generated.h"
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\intermediate\\build\\win64\\unrealeditor\\inc\\cannonman\\cannonbase.generated.h",
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\source\\cannonman\\dashcomponent.h",
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\intermediate\\build\\win64\\unrealeditor\\inc\\cannonman\\dashcomponent.generated.h",
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\source\\cannonman\\healthcomponent.h",
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\intermediate\\build\\win64\\unrealeditor\\inc\\cannonman\\healthcomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

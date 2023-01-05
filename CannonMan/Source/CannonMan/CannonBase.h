@@ -42,7 +42,10 @@ private:
 	UFUNCTION(BlueprintCallable)
 	bool GunTrace(FHitResult& HitResult, FVector& ShotDirection);
 
-	AController* GetOwnerController();
+	UPROPERTY(EditAnywhere)
+	float Damage = 10;
+
+	AController* GetOwnerController() const;
 
 
 };

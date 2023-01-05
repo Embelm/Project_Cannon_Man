@@ -53,7 +53,7 @@ public:
 	UPROPERTY(VisibleAnywhere)
 	bool IsDashing = false;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(EditAnywhere)
 	bool DebugDash = false;
 
 	float DashAlpha = 0;
@@ -64,3 +64,4 @@ public:
 	
 	class AActor* Owner;
 };
+

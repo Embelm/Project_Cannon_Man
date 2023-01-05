@@ -3,6 +3,7 @@
 
 #include "CannonBase.h"
 #include "Components/ArrowComponent.h"
+#include "HealthComponent.h"
 
 // Sets default values
 ACannonBase::ACannonBase()
@@ -39,7 +40,15 @@ void ACannonBase::PullTrigger()
 	{
 		DrawDebugPoint(GetWorld(), HitResult.Location, 20, FColor::Red, false, 3.0f);
 
-		// Do Damage and particle
+		AActor* HitActor = HitResult.GetActor(); 
+		UHealthComponent* HealthComponent = Cast<UHealthComponent>(HitActor->GetComponentByClass(UHealthComponent::StaticClass()));
+
+		if(HitActor != nullptr && HealthComponent != nullptr)
+		{
+			// Do Damage and particle
+			HealthComponent->DamageTaken(Damage);
+			UE_LOG(LogTemp, Warning, TEXT("Hit Character"));
+		}
 	}
 }
 
@@ -56,11 +65,14 @@ bool ACannonBase::GunTrace(FHitResult& HitResult, FVector& ShotDirection)
 	OwnerController->GetPlayerViewPoint(Location, Rotation);
 	ShotDirection = -Rotation.Vector();
 	FVector End = Location + Rotation.Vector() * MaxRange;
-	//DrawDebugCamera(GetWorld(), Location, Rotation, 90, 2, FColor::Red, true);
-	return GetWorld()->LineTraceSingleByChannel(HitResult, Location, End, ECollisionChannel::ECC_GameTraceChannel1);
+	FCollisionQueryParams Params;
+	
+	Params.AddIgnoredActor(this);
+	Params.AddIgnoredActor(GetOwner());
+	return GetWorld()->LineTraceSingleByChannel(HitResult, Location, End, ECollisionChannel::ECC_GameTraceChannel1, Params);
 }
 
-AController* ACannonBase::GetOwnerController()
+AController* ACannonBase::GetOwnerController() const
 {
 	APawn* OwnerPawn = Cast<APawn>(GetOwner());
 	if(OwnerPawn == nullptr)
