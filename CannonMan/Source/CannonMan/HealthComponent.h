@@ -30,6 +30,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	float DamageTaken(float Damage);
 
+	UFUNCTION(BlueprintPure)
+	float GetHealthPercent() const;
+
 private:
 	float Health;
 

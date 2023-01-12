@@ -30,11 +30,8 @@ private:
 	UPROPERTY(VisibleAnywhere)
 	USceneComponent* Root;
 	
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(VisibleAnywhere)
 	USkeletalMeshComponent* MeshComponent;
-
-	UPROPERTY(EditAnywhere)
-	class UArrowComponent* ArrowComponent;
 
 	UPROPERTY(EditAnywhere)
 	float MaxRange = 1000.0f;
@@ -46,6 +43,9 @@ private:
 	float Damage = 10;
 
 	AController* GetOwnerController() const;
+
+	UPROPERTY(EditAnywhere)
+	class UParticleSystem* MuzzleFlash;
 
 
 };

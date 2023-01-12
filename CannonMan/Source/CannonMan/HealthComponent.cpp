@@ -38,3 +38,8 @@ float UHealthComponent::DamageTaken(float Damage)
 	return Health;
 }
 
+float UHealthComponent::GetHealthPercent() const
+{
+	return Health/MaxHealth;
+}
+

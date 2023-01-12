@@ -4,6 +4,11 @@
 #include "CannonBase.h"
 #include "Components/ArrowComponent.h"
 #include "HealthComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "Components/SkeletalMeshComponent.h"
+
+
+
 
 // Sets default values
 ACannonBase::ACannonBase()
@@ -12,15 +17,15 @@ ACannonBase::ACannonBase()
 	PrimaryActorTick.bCanEverTick = true;
 	Root = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
 	SetRootComponent(Root); 
-	MeshComponent = Cast<USkeletalMeshComponent>(GetDefaultSubobjectByName(TEXT("SkeletalMesh")));
-	ArrowComponent = CreateDefaultSubobject<UArrowComponent>(TEXT("Arrow"));
+
 }
 
 // Called when the game starts or when spawned
 void ACannonBase::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	MeshComponent = Cast<USkeletalMeshComponent>(GetDefaultSubobjectByName(TEXT("SkeletalMesh")));
+
 }
 
 // Called every frame
@@ -50,6 +55,9 @@ void ACannonBase::PullTrigger()
 			UE_LOG(LogTemp, Warning, TEXT("Hit Character"));
 		}
 	}
+
+	UGameplayStatics::SpawnEmitterAttached(MuzzleFlash, MeshComponent, TEXT("BattleRifle_Barrel_JNTSocket"));
+
 }
 
 bool ACannonBase::GunTrace(FHitResult& HitResult, FVector& ShotDirection)

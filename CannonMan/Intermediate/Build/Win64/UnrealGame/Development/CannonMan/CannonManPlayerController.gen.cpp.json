@@ -1,0 +1,15 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\intermediate\\build\\win64\\unrealgame\\inc\\cannonman\\cannonmanplayercontroller.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\intermediate\\build\\win64\\cannonman\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\intermediate\\build\\win64\\unrealgame\\development\\cannonman\\definitions.cannonman.h",
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\source\\cannonman\\cannonmanplayercontroller.h",
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\intermediate\\build\\win64\\unrealgame\\inc\\cannonman\\cannonmanplayercontroller.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

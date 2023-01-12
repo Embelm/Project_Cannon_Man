@@ -1,0 +1,31 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\source\\cannonman\\cannonmancharacter.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\intermediate\\build\\win64\\cannonmaneditor\\debuggame\\engine\\sharedpch.engine.nonoptimized.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\intermediate\\build\\win64\\unrealeditor\\debuggame\\cannonman\\definitions.cannonman.h",
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\source\\cannonman\\cannonmancharacter.h",
+            "f:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\character.h",
+            "f:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\charactermovementreplication.h",
+            "f:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\charactermovementreplication.generated.h",
+            "f:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\rootmotionsource.h",
+            "f:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\rootmotionsource.generated.h",
+            "f:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\character.generated.h",
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\intermediate\\build\\win64\\unrealeditor\\inc\\cannonman\\cannonmancharacter.generated.h",
+            "f:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\springarmcomponent.h",
+            "f:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\springarmcomponent.generated.h",
+            "f:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\camera\\cameracomponent.h",
+            "f:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\cameracomponent.generated.h",
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\source\\cannonman\\cannonbase.h",
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\intermediate\\build\\win64\\unrealeditor\\inc\\cannonman\\cannonbase.generated.h",
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\source\\cannonman\\dashcomponent.h",
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\intermediate\\build\\win64\\unrealeditor\\inc\\cannonman\\dashcomponent.generated.h",
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\source\\cannonman\\healthcomponent.h",
+            "c:\\users\\jonathan.embelm\\documents\\unreal projects\\projectcannonman\\cannonman\\intermediate\\build\\win64\\unrealeditor\\inc\\cannonman\\healthcomponent.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

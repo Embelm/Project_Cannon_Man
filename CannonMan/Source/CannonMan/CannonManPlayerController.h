@@ -13,5 +13,16 @@ UCLASS()
 class CANNONMAN_API ACannonManPlayerController : public APlayerController
 {
 	GENERATED_BODY()
+
+protected:
+	virtual void BeginPlay() override;
+
+private:
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<class UUserWidget> HUDScreenClass;
+
+	UPROPERTY()
+	UUserWidget* HUD;
 	
 };
