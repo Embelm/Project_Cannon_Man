@@ -30,9 +30,11 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Locomotion")
 	float RotationRate = 100;
 
-
 private:
 
+	UFUNCTION(BlueprintCallable)
+	void ReloadAction();
+	
 	UFUNCTION(BlueprintCallable)
 	void MoveForward(float ScaleValue);
 
@@ -57,6 +59,8 @@ private:
 	UFUNCTION(BlueprintCallable)
 	void CrouchToggle();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+	bool bIsDead;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* SpringArmComponent;
@@ -73,6 +77,7 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<ACannonBase> WeaponClass;
 	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly,  meta = (AllowPrivateAccess = "true"))
 	ACannonBase* Weapon;
 
 };

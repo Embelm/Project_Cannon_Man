@@ -17,13 +17,17 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_CannonMan_Source_CannonMan_DashComponent_h_13_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execDashRefresh); \
-	DECLARE_FUNCTION(execDashAction);
+	DECLARE_FUNCTION(execDashAction); \
+	DECLARE_FUNCTION(execGetDashCooldownPercent); \
+	DECLARE_FUNCTION(execGetDashAmount);
 
 
 #define FID_CannonMan_Source_CannonMan_DashComponent_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execDashRefresh); \
-	DECLARE_FUNCTION(execDashAction);
+	DECLARE_FUNCTION(execDashAction); \
+	DECLARE_FUNCTION(execGetDashCooldownPercent); \
+	DECLARE_FUNCTION(execGetDashAmount);
 
 
 #define FID_CannonMan_Source_CannonMan_DashComponent_h_13_INCLASS_NO_PURE_DECLS \

@@ -38,6 +38,11 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Locomotion")
 	int32 MaxDashCounter = 2;
 
+	UFUNCTION(BlueprintCallable)
+	int32 GetDashAmount() const; 
+
+	UFUNCTION(BlueprintCallable)
+	float GetDashCooldownPercent() const;
 
 	UFUNCTION(BlueprintCallable)
 	void DashAction();

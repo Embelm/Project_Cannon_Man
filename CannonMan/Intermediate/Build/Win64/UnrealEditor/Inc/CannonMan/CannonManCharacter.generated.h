@@ -23,7 +23,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execLookRightRate); \
 	DECLARE_FUNCTION(execLookUpRate); \
 	DECLARE_FUNCTION(execMoveRight); \
-	DECLARE_FUNCTION(execMoveForward);
+	DECLARE_FUNCTION(execMoveForward); \
+	DECLARE_FUNCTION(execReloadAction);
 
 
 #define FID_CannonMan_Source_CannonMan_CannonManCharacter_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
@@ -35,7 +36,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execLookRightRate); \
 	DECLARE_FUNCTION(execLookUpRate); \
 	DECLARE_FUNCTION(execMoveRight); \
-	DECLARE_FUNCTION(execMoveForward);
+	DECLARE_FUNCTION(execMoveForward); \
+	DECLARE_FUNCTION(execReloadAction);
 
 
 #define FID_CannonMan_Source_CannonMan_CannonManCharacter_h_13_INCLASS_NO_PURE_DECLS \

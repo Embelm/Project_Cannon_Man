@@ -24,6 +24,9 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+	UPROPERTY()
+	float Health;
+
 	UPROPERTY(EditAnywhere)
 	float MaxHealth = 100.0f;
 
@@ -32,9 +35,9 @@ public:
 
 	UFUNCTION(BlueprintPure)
 	float GetHealthPercent() const;
+	
 
 private:
-	float Health;
 
 		
 };

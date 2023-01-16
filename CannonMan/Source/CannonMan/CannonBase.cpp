@@ -24,7 +24,9 @@ ACannonBase::ACannonBase()
 void ACannonBase::BeginPlay()
 {
 	Super::BeginPlay();
-	MeshComponent = Cast<USkeletalMeshComponent>(GetDefaultSubobjectByName(TEXT("SkeletalMesh")));
+	//MeshComponent = Cast<USkeletalMeshComponent>(GetDefaultSubobjectByName(TEXT("SkeletalMesh")));
+
+	Ammo = MaxAmmo;
 
 }
 
@@ -38,26 +40,59 @@ void ACannonBase::Tick(float DeltaTime)
 void ACannonBase::PullTrigger()
 {
 	FHitResult HitResult;
-	FVector ShotDirection;;
-
-	bool bSuccess = GunTrace(HitResult, ShotDirection);
-	if(bSuccess)
+	FVector ShotDirection;
+	if(Ammo > 0)
 	{
-		DrawDebugPoint(GetWorld(), HitResult.Location, 20, FColor::Red, false, 3.0f);
 
-		AActor* HitActor = HitResult.GetActor(); 
-		UHealthComponent* HealthComponent = Cast<UHealthComponent>(HitActor->GetComponentByClass(UHealthComponent::StaticClass()));
-
-		if(HitActor != nullptr && HealthComponent != nullptr)
+		Ammo--;
+		if(FireSoundEffect)
 		{
-			// Do Damage and particle
-			HealthComponent->DamageTaken(Damage);
-			UE_LOG(LogTemp, Warning, TEXT("Hit Character"));
+			UGameplayStatics::PlaySoundAtLocation(GetWorld(), FireSoundEffect, GetOwner()->GetActorLocation());
 		}
+		if(MyGunType == GunType::HitScan)
+		{
+			bool bSuccess = GunTrace(HitResult, ShotDirection);
+			if(bSuccess)
+			{
+				HitScanSuccess(HitResult);
+			}
+		}
+		else if(MyGunType == GunType::Projectile)
+		{
+			// Spawn projectile
+			UE_LOG(LogTemp, Warning, TEXT("Shoot Projectile"));
+		}
+
+		UGameplayStatics::SpawnEmitterAttached(MuzzleParticle, MeshComponent, TEXT("BattleRifle_Barrel_JNTSocket"));
+	}
+	
+
+}
+
+void ACannonBase::HitScanSuccess(FHitResult HitResult) 
+{
+	//DrawDebugPoint(GetWorld(), HitResult.Location, 20, FColor::Red, false, 3.0f);
+
+	AActor* HitActor = HitResult.GetActor(); 
+	UHealthComponent* HealthComponent = Cast<UHealthComponent>(HitActor->GetComponentByClass(UHealthComponent::StaticClass()));
+	PlayHitSFX(HitResult);
+	if(HitActor != nullptr && HealthComponent != nullptr)
+	{
+		// Do Damage and particle
+		HealthComponent->DamageTaken(Damage);
+		UE_LOG(LogTemp, Warning, TEXT("Hit Character"));
 	}
 
-	UGameplayStatics::SpawnEmitterAttached(MuzzleFlash, MeshComponent, TEXT("BattleRifle_Barrel_JNTSocket"));
+	UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), HitParticle, HitResult.Location);
 
+}
+
+void ACannonBase::PlayHitSFX(FHitResult HitResult) 
+{ 
+	if(HitSoundEffect)
+	{
+		UGameplayStatics::PlaySoundAtLocation(GetWorld(), HitSoundEffect, HitResult.Location);
+	}
 }
 
 bool ACannonBase::GunTrace(FHitResult& HitResult, FVector& ShotDirection)
@@ -78,6 +113,14 @@ bool ACannonBase::GunTrace(FHitResult& HitResult, FVector& ShotDirection)
 	Params.AddIgnoredActor(this);
 	Params.AddIgnoredActor(GetOwner());
 	return GetWorld()->LineTraceSingleByChannel(HitResult, Location, End, ECollisionChannel::ECC_GameTraceChannel1, Params);
+}
+
+void ACannonBase::ReloadGun() 
+{
+	if(Ammo < MaxAmmo)
+	{
+		Ammo = MaxAmmo;
+	}
 }
 
 AController* ACannonBase::GetOwnerController() const

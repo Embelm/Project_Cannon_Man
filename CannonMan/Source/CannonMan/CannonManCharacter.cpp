@@ -17,7 +17,7 @@ ACannonManCharacter::ACannonManCharacter()
 
 	SpringArmComponent = CreateDefaultSubobject<USpringArmComponent>(TEXT("Spring Arm"));
 
-	SpringArmComponent->SetupAttachment(GetMesh());
+	SpringArmComponent->SetupAttachment(GetRootComponent());
 
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 
@@ -26,6 +26,7 @@ ACannonManCharacter::ACannonManCharacter()
 	DashComponent = CreateDefaultSubobject<UDashComponent>(TEXT("Dash"));
 	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("Health"));
 
+	bIsDead = false;
 }
 
 // Called when the game starts or when spawned
@@ -43,6 +44,13 @@ void ACannonManCharacter::BeginPlay()
 void ACannonManCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	if(HealthComponent)
+	{
+		if(HealthComponent->Health <= 0)
+		{
+			bIsDead = true;
+		}
+	}
 }
 
 // Called to bind functionality to input
@@ -66,6 +74,14 @@ void ACannonManCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInput
 	PlayerInputComponent->BindAction(TEXT("Dash"), EInputEvent::IE_Pressed, this, &ACannonManCharacter::Dash);
 	PlayerInputComponent->BindAction(TEXT("Fire"), EInputEvent::IE_Pressed, this, &ACannonManCharacter::Fire);
 	PlayerInputComponent->BindAction(TEXT("Crouch"), EInputEvent::IE_Pressed, this, &ACannonManCharacter::CrouchToggle);
+	PlayerInputComponent->BindAction(TEXT("Reload"), EInputEvent::IE_Pressed, this, &ACannonManCharacter::ReloadAction);
+}
+
+
+
+void ACannonManCharacter::ReloadAction() 
+{
+	Weapon->ReloadGun();
 }
 
 void ACannonManCharacter::MoveForward(float ScaleValue)
@@ -101,12 +117,9 @@ void ACannonManCharacter::Fire()
 
 void ACannonManCharacter::CrouchToggle()
 {
-	//FVector CameraLocationA = SpringArmComponent->GetRelativeLocation(); 
-	
 	if(!bIsCrouched)
 	{
 		Crouch();
-
 	}
 	else
 	{

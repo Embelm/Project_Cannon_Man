@@ -14,20 +14,22 @@ struct FHitResult;
 #endif
 #define CANNONMAN_CannonBase_generated_h
 
-#define FID_CannonMan_Source_CannonMan_CannonBase_h_12_SPARSE_DATA
-#define FID_CannonMan_Source_CannonMan_CannonBase_h_12_RPC_WRAPPERS \
+#define FID_CannonMan_Source_CannonMan_CannonBase_h_20_SPARSE_DATA
+#define FID_CannonMan_Source_CannonMan_CannonBase_h_20_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execGunTrace); \
+	DECLARE_FUNCTION(execReloadGun); \
 	DECLARE_FUNCTION(execPullTrigger);
 
 
-#define FID_CannonMan_Source_CannonMan_CannonBase_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_CannonMan_Source_CannonMan_CannonBase_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execGunTrace); \
+	DECLARE_FUNCTION(execReloadGun); \
 	DECLARE_FUNCTION(execPullTrigger);
 
 
-#define FID_CannonMan_Source_CannonMan_CannonBase_h_12_INCLASS_NO_PURE_DECLS \
+#define FID_CannonMan_Source_CannonMan_CannonBase_h_20_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesACannonBase(); \
 	friend struct Z_Construct_UClass_ACannonBase_Statics; \
@@ -36,7 +38,7 @@ public: \
 	DECLARE_SERIALIZER(ACannonBase)
 
 
-#define FID_CannonMan_Source_CannonMan_CannonBase_h_12_INCLASS \
+#define FID_CannonMan_Source_CannonMan_CannonBase_h_20_INCLASS \
 private: \
 	static void StaticRegisterNativesACannonBase(); \
 	friend struct Z_Construct_UClass_ACannonBase_Statics; \
@@ -45,7 +47,7 @@ public: \
 	DECLARE_SERIALIZER(ACannonBase)
 
 
-#define FID_CannonMan_Source_CannonMan_CannonBase_h_12_STANDARD_CONSTRUCTORS \
+#define FID_CannonMan_Source_CannonMan_CannonBase_h_20_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ACannonBase(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ACannonBase) \
@@ -58,7 +60,7 @@ private: \
 public:
 
 
-#define FID_CannonMan_Source_CannonMan_CannonBase_h_12_ENHANCED_CONSTRUCTORS \
+#define FID_CannonMan_Source_CannonMan_CannonBase_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ACannonBase(ACannonBase&&); \
@@ -69,25 +71,25 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ACannonBase)
 
 
-#define FID_CannonMan_Source_CannonMan_CannonBase_h_9_PROLOG
-#define FID_CannonMan_Source_CannonMan_CannonBase_h_12_GENERATED_BODY_LEGACY \
+#define FID_CannonMan_Source_CannonMan_CannonBase_h_17_PROLOG
+#define FID_CannonMan_Source_CannonMan_CannonBase_h_20_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_CannonMan_Source_CannonMan_CannonBase_h_12_SPARSE_DATA \
-	FID_CannonMan_Source_CannonMan_CannonBase_h_12_RPC_WRAPPERS \
-	FID_CannonMan_Source_CannonMan_CannonBase_h_12_INCLASS \
-	FID_CannonMan_Source_CannonMan_CannonBase_h_12_STANDARD_CONSTRUCTORS \
+	FID_CannonMan_Source_CannonMan_CannonBase_h_20_SPARSE_DATA \
+	FID_CannonMan_Source_CannonMan_CannonBase_h_20_RPC_WRAPPERS \
+	FID_CannonMan_Source_CannonMan_CannonBase_h_20_INCLASS \
+	FID_CannonMan_Source_CannonMan_CannonBase_h_20_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_CannonMan_Source_CannonMan_CannonBase_h_12_GENERATED_BODY \
+#define FID_CannonMan_Source_CannonMan_CannonBase_h_20_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_CannonMan_Source_CannonMan_CannonBase_h_12_SPARSE_DATA \
-	FID_CannonMan_Source_CannonMan_CannonBase_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_CannonMan_Source_CannonMan_CannonBase_h_12_INCLASS_NO_PURE_DECLS \
-	FID_CannonMan_Source_CannonMan_CannonBase_h_12_ENHANCED_CONSTRUCTORS \
+	FID_CannonMan_Source_CannonMan_CannonBase_h_20_SPARSE_DATA \
+	FID_CannonMan_Source_CannonMan_CannonBase_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_CannonMan_Source_CannonMan_CannonBase_h_20_INCLASS_NO_PURE_DECLS \
+	FID_CannonMan_Source_CannonMan_CannonBase_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -97,5 +99,12 @@ template<> CANNONMAN_API UClass* StaticClass<class ACannonBase>();
 #undef CURRENT_FILE_ID
 #define CURRENT_FILE_ID FID_CannonMan_Source_CannonMan_CannonBase_h
 
+
+#define FOREACH_ENUM_GUNTYPE(op) \
+	op(GunType::HitScan) \
+	op(GunType::Projectile) 
+
+enum class GunType;
+template<> CANNONMAN_API UEnum* StaticEnum<GunType>();
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

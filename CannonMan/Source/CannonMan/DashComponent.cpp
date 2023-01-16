@@ -90,6 +90,17 @@ void UDashComponent::DebugDashSphere(FVector NewPosition)
 	DrawDebugSphere(GetWorld(), NewPosition, 50.0f, 12.0f, FColor::Red, false, 5.0f);
 }
 
+int32 UDashComponent::GetDashAmount() const
+{
+	return DashCounter;
+}
+
+float UDashComponent::GetDashCooldownPercent() const
+{
+	return DashRefreshTimer/DashCounterRefreshSpeed;
+}
+
+
 void UDashComponent::DashRefresh(float DeltaTime)
 {
 	DashRefreshTimer += DeltaTime;

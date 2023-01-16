@@ -29,12 +29,28 @@ void EmptyLinkFunctionForGeneratedCodeDashComponent() {}
 		P_THIS->DashAction();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(UDashComponent::execGetDashCooldownPercent)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(float*)Z_Param__Result=P_THIS->GetDashCooldownPercent();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UDashComponent::execGetDashAmount)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(int32*)Z_Param__Result=P_THIS->GetDashAmount();
+		P_NATIVE_END;
+	}
 	void UDashComponent::StaticRegisterNativesUDashComponent()
 	{
 		UClass* Class = UDashComponent::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "DashAction", &UDashComponent::execDashAction },
 			{ "DashRefresh", &UDashComponent::execDashRefresh },
+			{ "GetDashAmount", &UDashComponent::execGetDashAmount },
+			{ "GetDashCooldownPercent", &UDashComponent::execGetDashCooldownPercent },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -92,6 +108,70 @@ void EmptyLinkFunctionForGeneratedCodeDashComponent() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_UDashComponent_GetDashAmount_Statics
+	{
+		struct DashComponent_eventGetDashAmount_Parms
+		{
+			int32 ReturnValue;
+		};
+		static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UDashComponent_GetDashAmount_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(DashComponent_eventGetDashAmount_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UDashComponent_GetDashAmount_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UDashComponent_GetDashAmount_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UDashComponent_GetDashAmount_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "DashComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UDashComponent_GetDashAmount_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UDashComponent, nullptr, "GetDashAmount", nullptr, nullptr, sizeof(Z_Construct_UFunction_UDashComponent_GetDashAmount_Statics::DashComponent_eventGetDashAmount_Parms), Z_Construct_UFunction_UDashComponent_GetDashAmount_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UDashComponent_GetDashAmount_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UDashComponent_GetDashAmount_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UDashComponent_GetDashAmount_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UDashComponent_GetDashAmount()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UDashComponent_GetDashAmount_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UDashComponent_GetDashCooldownPercent_Statics
+	{
+		struct DashComponent_eventGetDashCooldownPercent_Parms
+		{
+			float ReturnValue;
+		};
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UDashComponent_GetDashCooldownPercent_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(DashComponent_eventGetDashCooldownPercent_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UDashComponent_GetDashCooldownPercent_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UDashComponent_GetDashCooldownPercent_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UDashComponent_GetDashCooldownPercent_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "DashComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UDashComponent_GetDashCooldownPercent_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UDashComponent, nullptr, "GetDashCooldownPercent", nullptr, nullptr, sizeof(Z_Construct_UFunction_UDashComponent_GetDashCooldownPercent_Statics::DashComponent_eventGetDashCooldownPercent_Parms), Z_Construct_UFunction_UDashComponent_GetDashCooldownPercent_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UDashComponent_GetDashCooldownPercent_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UDashComponent_GetDashCooldownPercent_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UDashComponent_GetDashCooldownPercent_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UDashComponent_GetDashCooldownPercent()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UDashComponent_GetDashCooldownPercent_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UDashComponent);
 	UClass* Z_Construct_UClass_UDashComponent_NoRegister()
 	{
@@ -145,6 +225,8 @@ void EmptyLinkFunctionForGeneratedCodeDashComponent() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_UDashComponent_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_UDashComponent_DashAction, "DashAction" }, // 3823878847
 		{ &Z_Construct_UFunction_UDashComponent_DashRefresh, "DashRefresh" }, // 2963271910
+		{ &Z_Construct_UFunction_UDashComponent_GetDashAmount, "GetDashAmount" }, // 793646099
+		{ &Z_Construct_UFunction_UDashComponent_GetDashCooldownPercent, "GetDashCooldownPercent" }, // 2347298862
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDashComponent_Statics::Class_MetaDataParams[] = {
@@ -256,9 +338,9 @@ void EmptyLinkFunctionForGeneratedCodeDashComponent() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_CannonMan_Source_CannonMan_DashComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UDashComponent, UDashComponent::StaticClass, TEXT("UDashComponent"), &Z_Registration_Info_UClass_UDashComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDashComponent), 2945948887U) },
+		{ Z_Construct_UClass_UDashComponent, UDashComponent::StaticClass, TEXT("UDashComponent"), &Z_Registration_Info_UClass_UDashComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDashComponent), 1073904426U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_CannonMan_Source_CannonMan_DashComponent_h_4125233768(TEXT("/Script/CannonMan"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_CannonMan_Source_CannonMan_DashComponent_h_3178061720(TEXT("/Script/CannonMan"),
 		Z_CompiledInDeferFile_FID_CannonMan_Source_CannonMan_DashComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_CannonMan_Source_CannonMan_DashComponent_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
